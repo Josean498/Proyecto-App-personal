@@ -2,8 +2,15 @@
   <ion-toolbar>
     <ion-title>
         <div class="ion-text-center">
-            <h3><b>Car App</b></h3>
-        </div>
+            <h3><b>COCHES ONLINE</b></h3>
+        <ion-list>
+            <ion-item>
+                <ion-avatar slot="start">
+                  <img src="C:\Users\José\CarApp\src\assets\icon\logo.png">
+                </ion-avatar>
+              </ion-item>
+        </ion-list>
+      </div>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,13 +21,20 @@
         <ion-col *ngFor="let coche of coches | async" size-xs="12" size-sm="6" size-md="4" size-lg="2" size-xl="3" >
             <ion-card>
             <ion-item>
-              <h2><b>{{ coche.Marca }} {{ coche.Modelo }}</b></h2>
+              <h2 id="marca"><b>{{ coche.Modelo }}</b></h2>
             </ion-item>
-            <ion-card-content>
-              Bacon ipsum dolor amet salami prosciutto ham hock, strip steak buffalo ribeye pork chop. Beef ribs tenderloin tail shoulder.
-              Spare ribs ham shoulder brisket rump hamburger. Pork belly kevin shoulder prosciutto ribeye pork chop chicken
-              strip steak pig.
-            </ion-card-content>
+            <!-- List of Text Items -->
+            <ion-list>
+              <ion-item>
+                <ion-label><b>Marca: {{ coche.Marca }}</b></ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label><b>Pais: {{ coche.Pais }}</b></ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label><b>Año: {{ coche.Ano }}</b></ion-label>
+              </ion-item>
+            </ion-list>
           </ion-card>
         </ion-col>
       </ion-row>

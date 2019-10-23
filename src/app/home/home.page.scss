@@ -1,4 +1,13 @@
-ion-card-content {
+ion-grid {
+    background-color: black;
+}
+ion-title {
     background-color: red;
     color: white;
+}
+ion-toolbar {
+    border-color: red;
+}
+ion-card-content {
+    background-color: white;
 }
