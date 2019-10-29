@@ -2,14 +2,7 @@
   <ion-toolbar>
     <ion-title>
         <div class="ion-text-center">
-            <h3><b>COCHES ONLINE</b></h3>
-        <ion-list>
-            <ion-item>
-                <ion-avatar slot="start">
-                  <img src="C:\Users\José\CarApp\src\assets\icon\logo.png">
-                </ion-avatar>
-              </ion-item>
-        </ion-list>
+          <h3><ion-icon name="logo-model-s"></ion-icon>&nbsp;<b>COCHES ONLINE</b>&nbsp;<ion-icon name="logo-angular"></ion-icon></h3>
       </div>
     </ion-title>
   </ion-toolbar>
@@ -17,26 +10,26 @@
 
 <ion-content>
   <ion-grid>
-      <ion-row>
-        <ion-col *ngFor="let coche of coches | async" size-xs="12" size-sm="6" size-md="4" size-lg="2" size-xl="3" >
-            <ion-card>
+    <ion-row>
+      <ion-col *ngFor="let coche of coches | async" size-xs="12" size-sm="6" size-md="4" size-lg="3" size-xl="2" >
+          <ion-card>
+          <ion-item class="model">
+            <h2 id="marca"><b>{{ coche.Modelo }}</b></h2>
+          </ion-item>
+          <!-- List of Text Items -->
+          <ion-list>
             <ion-item>
-              <h2 id="marca"><b>{{ coche.Modelo }}</b></h2>
+              <ion-label><ion-icon name="logo-model-s"></ion-icon>&nbsp;<b>Marca:</b> {{ coche.Marca }}</ion-label>
             </ion-item>
-            <!-- List of Text Items -->
-            <ion-list>
-              <ion-item>
-                <ion-label><b>Marca: {{ coche.Marca }}</b></ion-label>
-              </ion-item>
-              <ion-item>
-                <ion-label><b>Pais: {{ coche.Pais }}</b></ion-label>
-              </ion-item>
-              <ion-item>
-                <ion-label><b>Año: {{ coche.Ano }}</b></ion-label>
-              </ion-item>
-            </ion-list>
-          </ion-card>
-        </ion-col>
-      </ion-row>
+            <ion-item>
+              <ion-label><ion-icon name = "globe"></ion-icon>&nbsp;<b>Pais:</b> {{ coche.Pais }}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label><ion-icon name="calendar"></ion-icon>&nbsp;<b>Año:</b> {{ coche.Fecha }}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>
