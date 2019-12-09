@@ -18,3 +18,8 @@ ion-card-content {
 h3 {
     margin-top: 4px;
 }
+@media (orientation: landscape) {
+    #titulo {
+        visibility: hidden;
+    }
+}
