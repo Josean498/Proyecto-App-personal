@@ -1,3 +1,11 @@
+@media (orientation: landscape) {
+    #titulo {
+        visibility: collapse;
+        --ion-background-color : red;
+        height: 0px;
+    }
+}
+
 ion-grid {
     background-color: black;
 }
@@ -18,8 +26,10 @@ ion-card-content {
 h3 {
     margin-top: 4px;
 }
-@media (orientation: landscape) {
-    #titulo {
-        visibility: hidden;
+@media (max-width: 1500px) {
+    ion-item {
+        --ion-background-color: #838383;
+        text-align: center;
+        color: #fff;
     }
 }

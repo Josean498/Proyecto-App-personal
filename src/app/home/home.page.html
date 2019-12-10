@@ -2,17 +2,20 @@
   <ion-toolbar>
     <ion-title>
         <div class="ion-text-center">
-          <h3><ion-icon name="logo-model-s"></ion-icon>&nbsp;<b>COCHES ONLINE</b>&nbsp;<ion-icon name="logo-angular"></ion-icon></h3>
+          {{head}}
       </div>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-item>
+        <ion-input [(ngModel)]="buscar" placeholder="Escribe aquí"></ion-input><ion-icon name="search"></ion-icon>
+    </ion-item>
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let coche of coches | async" size-xs="12" size-sm="6" size-md="4" size-lg="3" size-xl="2" >
-          <ion-card>
+          <ion-card *ngIf="coche.Modelo==buscar || coche.Marca==buscar || coche.Pais==buscar || coche.Fecha==buscar">
           <ion-item class="model">
             <h2 id="marca"><b>{{ coche.Modelo }}</b></h2>
           </ion-item>
